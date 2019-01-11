@@ -24,7 +24,8 @@
                         "sourceMap": true,
                         "extractCss": true,
                         "assets": [
-                            "src/favicon.ico",
+							"src/favicon.ico",
+							"src/.htaccess",
                             "src/assets"
                         ],
                         "styles": [
