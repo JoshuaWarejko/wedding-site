@@ -1,0 +1,45 @@
+<div class="custom-carousel">
+	<div class="carousel-inner" (window:resize)="windowResize($event)" [ngStyle]="{'height': windowHeight}">
+		<div class="carousel-image" *ngFor="let image of images; let i = index;" [ngClass]="{active: imageIndex === i}" [ngStyle]="{'background-image': image.url}"></div>
+		<div class="overlay"></div>
+		<div class="carousel-caption">
+			<h2 class="wow fadeInUp" data-wow-duration="1.00s">Josh &amp; Haley</h2>
+			<div class="subtext wow fadeInUp mb-4" data-wow-delay="1.00s">
+				<h4>
+					<span class="wow fadeInUp" data-wow-delay="1.05s">W</span>
+					<span class="wow fadeInUp" data-wow-delay="1.10s">e</span>
+					<span class="wow fadeInUp" data-wow-delay="1.15s">'</span>
+					<span class="wow fadeInUp" data-wow-delay="1.20s">r</span>
+					<span class="wow fadeInUp" data-wow-delay="1.25s">e</span>
+					<span class="wow fadeInUp" data-wow-delay="1.30s">&nbsp;</span>
+					<span class="wow fadeInUp" data-wow-delay="1.35s">G</span>
+					<span class="wow fadeInUp" data-wow-delay="1.40s">e</span>
+					<span class="wow fadeInUp" data-wow-delay="1.45s">t</span>
+					<span class="wow fadeInUp" data-wow-delay="1.50s">t</span>
+					<span class="wow fadeInUp" data-wow-delay="1.55s">i</span>
+					<span class="wow fadeInUp" data-wow-delay="1.60s">n</span>
+					<span class="wow fadeInUp" data-wow-delay="1.65s">g</span>
+					<span class="wow fadeInUp" data-wow-delay="1.70s">&nbsp;</span>
+					<span class="wow fadeInUp" data-wow-delay="1.75s">M</span>
+					<span class="wow fadeInUp" data-wow-delay="1.80s">a</span>
+					<span class="wow fadeInUp" data-wow-delay="1.85s">r</span>
+					<span class="wow fadeInUp" data-wow-delay="1.90s">r</span>
+					<span class="wow fadeInUp" data-wow-delay="1.95s">i</span>
+					<span class="wow fadeInUp" data-wow-delay="2.00s">e</span>
+					<span class="wow fadeInUp" data-wow-delay="2.05s">d</span>
+				</h4>
+			</div>
+			<div class="wow fadeInUp" data-wow-delay="2.10s">
+				<button class="btn btn-primary" (click)="openPopup()">Watch Video</button>
+			</div>
+		</div>
+		<div class="carousel-btns">
+			<button class="btn btn-link arrow-left" (click)="prevSlide()"><fa name="arrow-circle-left"></fa></button>
+			<button class="btn btn-link arrow-right" (click)="nextSlide()"><fa name="arrow-circle-right"></fa></button>
+		</div>
+		<div class="save-the-date-popup" [ngClass]="{'popup': popup}">
+			<h4>Save The Date</h4>
+			<span>June 7 2018</span>
+		</div>
+	</div>
+</div>

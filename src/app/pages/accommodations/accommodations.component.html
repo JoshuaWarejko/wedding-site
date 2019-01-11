@@ -1,0 +1,32 @@
+<div id="proposal">
+	<app-hero imageSrc="../../../assets/images/accommodations-hero.jpg" title="Accommodations" imagePosition="center bottom"></app-hero>
+</div>
+<section>
+	<div class="container">
+		<div class="content">
+			<h2 class="text-center mb-5">Terranea</h2>
+			<div class="rooms-wrap">
+				<div class="row">
+					<div class="col-md-4 mb-2 mb-md-0" *ngFor="let room of rooms">
+						<div class="room">
+							<a class="d-block" target="_blank" href="https://gc.synxis.com/rez.aspx?Chain=15564&shell=RBE2&hotel=23793&start=availresults&room=&arrive=06%2F07%2F2019&depart=06%2F08%2F2019&adult=1&child=0&rooms=1&__utma=253024652.267641796.1547187438.1547187440.1547187440.1&__utmb=253024652.1.10.1547187440&__utmc=253024652&__utmx=-&__utmz=253024652.1547187440.1.1.utmcsr%3Dgoogle%7Cutmccn%3D%28organic%29%7Cutmcmd%3Dorganic%7Cutmctr%3D%28not%2520provided%29&__utmv=-&__utmk=24647289&_ga=2.225922714.12884530.1547187438-267641796.1547187438">
+								<div class="image-wrap">
+									<img [src]="room.image" [alt]="room.title" />
+								</div>
+							</a>
+							<div class="info pt-2">
+								<h3>{{room.title}}</h3>
+								<div class="mb-2"><strong>Size:</strong> {{room.size}}</div>
+								<ul>
+									<li *ngFor="let feature of room.features">{{feature}}</li>
+								</ul>
+								<p *ngIf="room.readMore">{{room.description}}</p>
+								<button class="btn btn-primary" (click)="room.readMore = !room.readMore">Read {{ !room.readMore ? 'More' : 'Less'}}</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

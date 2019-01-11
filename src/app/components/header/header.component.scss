@@ -1,0 +1,40 @@
+@import "../../../assets/stylesheets/variables";
+
+.navbar {
+	border-bottom: 1px solid $gray-300;
+	.navbar-brand {
+		margin: 0;
+		max-width: 70px;
+		img {
+			display: block;
+			width: 100%;
+		}
+		@media screen and (min-width: 576px) {
+			max-width: 100px;
+		}
+	}
+
+	.navbar-nav .nav-item .nav-link {
+		padding-left: 2rem;
+		padding-right: 2rem;
+	}
+}
+
+.navbar-toggler {
+	outline: none;
+}
+
+.navbar .collapse {
+	ul {
+		&:first-of-type {
+			flex: 0 0 45%;
+		}
+		&:last-of-type {
+			flex: 0 0 45%;
+		}
+	}
+	.logo {
+		flex: 0 0 10%;
+		text-align: center;
+	}
+}

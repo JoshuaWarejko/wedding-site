@@ -1,0 +1,186 @@
+// Bootstrap Variable Overrides
+
+$container-max-widths: (
+sm: 576px,
+md: 768px,
+lg: 992px,
+xl: 1280px
+);
+
+$xl-min-width: 1280px;
+$lg-min-width: 992px;
+$md-min-width: 768px;
+$sm-mid-width: 576px;
+
+$light-green: #15C121;
+
+$disabled: #e9ecef;
+
+// Colors
+$gray-100: #F4F4F4;
+$gray-300: #E6E6E6;
+$gray-400: #BEC2C6;
+$gray-500: #93999F;
+$gray-600: #777777;
+$gray-900: #27323F;
+
+$red: #E83333;
+$green: #1E9B27;
+$blue: #00A3DA;
+$blueDark: #0078A0;
+// $orange: #E79230;
+$orange: #FFB641;
+$purple: #703EE2;
+
+$status-dropdown-dark: #31465F;
+$status-dropdown-light: #506277;
+
+$primary: #AE974C;
+$secondary: #A7A7A7;
+$danger: #751C16;
+// $warning: #DF9F4C;
+$warning: $orange;
+$headings-color: $primary;
+$info: $gray-400;
+$white: #ffffff;
+$black: #000000;
+$body-color: $gray-900;
+$component-active-bg: $primary;
+
+// Body Styles
+$body-bg: $gray-100;
+$font-family-base: Montserrat, Helvetica, Arial;
+$great-vibes-font-family: 'Great Vibes', $font-family-base;
+
+// Grid Styles
+$grid-gutter-width-base: 20px;
+$grid-gutter-width: $grid-gutter-width-base;
+
+// Btn Styling
+$btn-border-radius: 0;
+$btn-line-height: 40px;
+$btn-padding-y: 0;
+$btn-padding-x: 20px;
+$btn-font-weight: 700;
+
+// Form Styling
+// $input-height: 35px;
+// $input-height-inner: 35px;
+// $input-height-sm: 20px;
+// $input-height-inner-sm: 20px;
+// $input-height-lg: 40px;
+// $input-height-inner-lg: 40px;
+
+$input-btn-padding-x: 1rem;
+$input-btn-padding-y: 0.25rem;
+$input-btn-padding-x-sm: 1rem;
+$input-btn-padding-y-sm: 0.25rem;
+$input-btn-padding-x-lg: 1rem;
+$input-btn-padding-y-lg: 0.25rem;
+
+$input-border-color: $gray-300;
+
+$input-btn-focus-width: .2rem;
+$input-btn-focus-color: rgba($component-active-bg, .25);
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color;
+
+$input-focus-bg: transparent;
+$input-focus-border-color: $gray-300;
+$input-focus-color: #1a1a1a;
+$input-focus-box-shadow: $input-btn-focus-box-shadow;
+
+$input-placeholder-color: $gray-500;
+
+// $custom-select-padding-y: 0.25rem;
+// $custom-select-padding-x: 1rem;
+// $custom-select-border-radius: 0;
+// $custom-select-focus-box-shadow: $input-btn-focus-box-shadow;
+// $custom-select-line-height: 1;
+
+
+$form-group-margin-bottom: 0.5rem;
+
+// Font Styling
+$h1-font-size: 45px;
+$h2-font-size: 30px;
+$h3-font-size: 20px;
+$h4-font-size: 18px;
+$h5-font-size: 16px;
+$headings-font-weight: 700;
+
+$theme-colors: ();
+$theme-colors: map-merge((
+"normal"     :     $gray-900,
+"green"      :     $green,
+"blue-dark"  :     $blueDark,
+"medium"     :     $gray-400
+), $theme-colors);
+
+// Element Styling
+$border-radius: 0.125rem;
+$border-radius-lg: 0.125rem;
+$border-radius-sm: 0.125rem;
+
+// Navbar Styling
+$navbar-padding-y: 20px;
+$navbar-padding-x: 30px;
+$navbar-dark-color: $white;
+$navbar-dark-hover-color: $white;
+$navbar-dark-active-color: $white;
+$navbar-dark-disabled-color: rgba($white, .25);
+$navbar-dark-toggler-border-color:  rgba($white, .1);
+
+$nav-link-padding-x: 2rem;
+
+// Nav Items Styling
+$nav-pills-border-radius: 0;
+$nav-pills-link-active-color: $white;
+$nav-pills-link-active-bg: rgba($white, 0.15);
+
+// Cards
+$card-spacer-y: .75rem;
+$card-spacer-x: 1.25rem;
+$card-border-width: 0;
+$card-border-radius: 0;
+$card-inner-border-radius: 0;
+$card-cap-bg: rgba($black, .03);
+$card-bg: $white;
+
+$card-img-overlay-padding: 1.25rem;
+
+$card-columns-count: 3;
+$card-columns-gap: 1.25rem;
+
+// Pagination
+// $pagination-padding-y: .25rem;
+// $pagination-padding-x: .5rem;
+// $pagination-padding-y-sm: .25rem;
+// $pagination-padding-x-sm: .5rem;
+// $pagination-padding-y-lg: .5rem;
+// $pagination-padding-x-lg: 1rem;
+// $pagination-line-height: 1;
+
+
+$fonts-url: '/assets/fonts/';
+
+// $pagination-color: $link-color;
+// $pagination-bg: $white;
+// $pagination-border-width: $border-width;
+// $pagination-border-color: $gray-300;
+
+// $pagination-hover-color: $link-hover-color;
+// $pagination-hover-bg: $gray-200;
+// $pagination-hover-border-color: $gray-300;
+
+// $pagination-active-color: $white;
+// $pagination-active-bg: theme-color("primary");
+// $pagination-active-border-color: theme-color("primary");
+
+// $pagination-disabled-color: $gray-600;
+// $pagination-disabled-bg: $white;
+// $pagination-disabled-border-color: $gray-300;
+
+// Tables
+$table-cell-padding: .50rem;
+$table-cell-padding-sm: .3rem;
+

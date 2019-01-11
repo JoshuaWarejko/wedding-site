@@ -1,0 +1,49 @@
+<div id="home">
+	<div class="main-content">
+		<app-hero imageSrc="../../../assets/images/home-hero.jpg" title="Haley &amp; Josh" [showGettingMarried]="true"></app-hero>
+		<section class="begins-in">
+			<div class="container">
+				<div class="content text-center">
+					<h2>Ceremony Begins In</h2>
+					<div>
+						<span class="mr-2">{{days}} Days</span>
+						<span class="mr-2">{{hours}} Hours</span>
+						<span class="mr-2">{{minutes}} Minutes</span>
+						<span class="mr-2">{{seconds}} Seconds</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="her-him mb-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="image-wrap mb-2">
+							<img src="../../../assets/images/haley-bio.jpg" alt="Haley" />
+						</div>
+						<h3>Her</h3>
+						<p>Top turn top turn wedge factory outer bar closeouts big windup new school? Shack doggy door grommet tri fin frothed sandbar combo double overhead double overhead. Freshie brah crusty claim courdoroy layback daggers claim transition. White wash speed Jordy Smith frontside snap big fish. Tuck insider transition layback daggers Simpo he's a legend barn dog. Duck diving rows of white water priority full wrap frothy top, backside bottomed out.</p>
+						<div class="text-medium font-italic d-none d-md-block">I am kind of in love with Him <fa name="long-arrow-right" class="ml-2"></fa></div>
+					</div>
+					<div class="col-md-6">
+						<div class="image-wrap mb-2">
+							<img src="../../../assets/images/josh-bio.jpg" alt="Josh" />
+						</div>
+						<h3>Him</h3>
+						<p>Top turn top turn wedge factory outer bar closeouts big windup new school? Shack doggy door grommet tri fin frothed sandbar combo double overhead double overhead. Freshie brah crusty claim courdoroy layback daggers claim transition. White wash speed Jordy Smith frontside snap big fish. Tuck insider transition layback daggers Simpo he's a legend barn dog. Duck diving rows of white water priority full wrap frothy top, backside bottomed out.</p>
+						<div class="text-medium font-italic d-none d-md-block"><fa name="long-arrow-left" class="mr-2"></fa>I am kind of in love with Her</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="images">
+			<h2 class="mb-4 text-center">Our Adventure</h2>
+			<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+				<ng-template ngbSlide *ngFor="let image of images">
+					<img [src]="image" alt="Random slide">
+					<div class="carousel-caption"></div>
+				</ng-template>
+			</ngb-carousel>
+		</section>
+	</div>
+</div>

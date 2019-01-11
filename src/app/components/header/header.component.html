@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-sm">
+	<a class="navbar-brand d-block d-sm-none" [routerLink]="['']">
+		<img src="assets/images/HJ-pineapple-logo-gold.png" alt="Logo" />
+	</a>
+	<button class="navbar-toggler text-primary" type="button" (click)="showMenu = !showMenu">
+		<fa name="bars"></fa>
+	</button>
+	<div class="collapse navbar-collapse w-100" [ngClass]="{'show': showMenu}">
+		<ul class="navbar-nav justify-content-end align-items-center">
+			<li class="nav-item">
+				<a class="nav-link" [routerLink]="['/proposal']">Proposal</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" [routerLink]="['/wedding-details']">Wedding Details</a>
+			</li>
+		</ul>
+		<div class="logo d-none d-sm-block">
+			<a class="navbar-brand" [routerLink]="['']">
+				<img src="assets/images/HJ-pineapple-logo-gold.png" alt="Logo" />
+			</a>
+		</div>
+		<ul class="navbar-nav justify-content-beginning align-items-center">
+			<li class="nav-item active">
+				<a class="nav-link" [routerLink]="['/accommodations']">Accommodations</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" [routerLink]="['/registry']">Registry</a>
+			</li>
+		</ul>
+	</div>
+</nav>

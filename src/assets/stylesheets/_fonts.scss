@@ -1,0 +1,166 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-black-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-black-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-black-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-black-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-black-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-black-webfont.svg#montserratblack') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-blackitalic-webfont.svg#montserratblack_italic') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-bold-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-bold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-bold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-bold-webfont.svg#montserratbold') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-bolditalic-webfont.svg#montserratbold_italic') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-extrabold-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-extrabold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-extrabold-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-extrabold-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-extrabold-webfont.svg#montserratextrabold') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-extrabolditalic-webfont.svg#montserratextrabold_italic') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-italic-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-italic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-italic-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-italic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-italic-webfont.svg#montserratitalic') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-light-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-light-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-light-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-light-webfont.svg#montserratlight') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-lightitalic-webfont.svg#montserratlight_italic') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-medium-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-medium-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-medium-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-medium-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-medium-webfont.svg#montserratmedium') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('/assets/fonts/montserrat/montserrat-regular-webfont.eot');
+    src: url('/assets/fonts/montserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/montserrat/montserrat-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/montserrat/montserrat-regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/montserrat/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+	font-style: normal;
+	font-display: 'swap';
+
+}
+
+@font-face {
+    font-family: 'Great Vibes';
+    src: url('/assets/fonts/great-vibes/greatvibes-regular-webfont.eot');
+    src: url('/assets/fonts/great-vibes/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/great-vibes/greatvibes-regular-webfont.woff2') format('woff2'),
+         url('/assets/fonts/great-vibes/greatvibes-regular-webfont.woff') format('woff'),
+         url('/assets/fonts/great-vibes/greatvibes-regular-webfont.ttf') format('truetype'),
+         url('/assets/fonts/great-vibes/greatvibes-regular-webfont.svg#great_vibesregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -1,0 +1,41 @@
+<div class="hero" (window:resize)="windowResize($event)" [ngStyle]="{'max-height': heroHeight}">
+	<img [src]="imageSrc" alt="Hero Image" *ngIf="displayImage" />
+	<div class="image" [ngStyle]="imageStyle" [style.background-image]="'url(' + imageSrc + ')'">
+		<div class="hero-inner">
+			<div class="hero-content">
+				<div class="hero-content-inner text-center">
+					<h1 class="wow fadeInUp ff-great-vibes" data-wow-duration="1.00s">{{title}}</h1>
+					<div class="subtext wow fadeInUp mb-sm-4" data-wow-delay="1.00s">
+						<h2 *ngIf="showGettingMarried && !subtitle">
+							<span class="wow fadeInUp" data-wow-delay="1.05s">W</span>
+							<span class="wow fadeInUp" data-wow-delay="1.10s">e</span>
+							<span class="wow fadeInUp" data-wow-delay="1.15s">'</span>
+							<span class="wow fadeInUp" data-wow-delay="1.20s">r</span>
+							<span class="wow fadeInUp" data-wow-delay="1.25s">e</span>
+							<span class="wow fadeInUp" data-wow-delay="1.30s">&nbsp;</span>
+							<span class="wow fadeInUp" data-wow-delay="1.35s">G</span>
+							<span class="wow fadeInUp" data-wow-delay="1.40s">e</span>
+							<span class="wow fadeInUp" data-wow-delay="1.45s">t</span>
+							<span class="wow fadeInUp" data-wow-delay="1.50s">t</span>
+							<span class="wow fadeInUp" data-wow-delay="1.55s">i</span>
+							<span class="wow fadeInUp" data-wow-delay="1.60s">n</span>
+							<span class="wow fadeInUp" data-wow-delay="1.65s">g</span>
+							<span class="wow fadeInUp" data-wow-delay="1.70s">&nbsp;</span>
+							<span class="wow fadeInUp" data-wow-delay="1.75s">M</span>
+							<span class="wow fadeInUp" data-wow-delay="1.80s">a</span>
+							<span class="wow fadeInUp" data-wow-delay="1.85s">r</span>
+							<span class="wow fadeInUp" data-wow-delay="1.90s">r</span>
+							<span class="wow fadeInUp" data-wow-delay="1.95s">i</span>
+							<span class="wow fadeInUp" data-wow-delay="2.00s">e</span>
+							<span class="wow fadeInUp" data-wow-delay="2.05s">d</span>
+						</h2>
+						<h2 *ngIf="subtitle">{{subtitle}}</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="menu" #headerSection>
+	<app-header></app-header>
+</div>
