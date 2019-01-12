@@ -22,7 +22,7 @@
 							<img src="../../../assets/images/haley-bio.jpg" alt="Haley" />
 						</div>
 						<h3>Her</h3>
-						<p>Hey, girl, hey! Haley here! I spend my time downtown (if I ever have any) singing Arianna Grande songs at the top of my lungs and getting my nails done every other day.</p>
+						<p>Hey, girl, hey! Haley here! I spend my downtown (if I ever have any) singing Arianna Grande songs at the top of my lungs and getting my nails done every other day cuz yolo.</p>
 						<h5>A Few of My Favorite Things:</h5>
 						<div><strong>Movie</strong>: Grand Budapest Hotel</div>
 						<div><strong>Car</strong>: G Wagon</div>
@@ -39,7 +39,7 @@
 						<h3>Him</h3>
 						<p>Sup bro! The name's Josh, but you probably know me by how much Haley talks about my muscles and how good looking she thinks her fiance (me) is. Born and raised on the beaches of SoCal, I spend my days programming, surfing, and at the gym getting yolked.</p>
 						<h5>A Few of My Favorite Things:</h5>
-						<div><strong>Movie</strong>: Long Survivor or Zero Dark Thirty</div>
+						<div><strong>Movie</strong>: Lone Survivor or Zero Dark Thirty</div>
 						<div><strong>Car</strong>: Audi R8 V10 Plus</div>
 						<div><strong>Food</strong>: Mexican</div>
 						<div><strong>Place</strong>: Beach</div>
@@ -51,15 +51,13 @@
 			</div>
 		</section>
 		<section class="images">
-			<div class="container">
-				<h2 class="mb-4 text-center">Our Adventure</h2>
-				<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
-					<ng-template ngbSlide *ngFor="let image of images">
-						<img [src]="image" alt="Random slide">
-						<div class="carousel-caption"></div>
-					</ng-template>
-				</ngb-carousel>
-			</div>
+			<h2 class="mb-4 text-center">Our Adventure</h2>
+			<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+				<ng-template ngbSlide *ngFor="let image of images">
+					<img [src]="image" alt="Random slide">
+					<div class="carousel-caption"></div>
+				</ng-template>
+			</ngb-carousel>
 		</section>
 	</div>
 </div>
