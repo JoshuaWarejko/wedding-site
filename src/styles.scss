@@ -20,6 +20,10 @@ html, body {
 	}
 }
 
+[class^="col-"] {
+	margin-bottom: 1rem;
+}
+
 .video-modal .modal-dialog {
 	width: 90%;
 	max-width: 100%;
