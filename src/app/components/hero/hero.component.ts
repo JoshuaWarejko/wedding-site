@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, Inject, Input } from '@angular/core';
+import { PageScrollService } from 'ngx-page-scroll-core';
 
 @Component({
 	selector: 'app-hero',
@@ -12,16 +13,18 @@ export class HeroComponent implements OnInit {
 	@Input() subtitle: string;
 	@Input() showGettingMarried: string;
 	@Input() imagePosition: string;
+	@Input() scrollLink: { text: string, anchor: string };
 	@ViewChild('headerSection') headerSection: ElementRef;
 	windowHeight: any;
 	displayImage: any;
 	imageStyle: any;
 	heroHeight: any;
 
-	constructor(@Inject('WINDOW') private window: any) { }
+	constructor(@Inject('WINDOW') private window: any, @Inject('DOCUMENT') private document: any, private scrollService: PageScrollService) { }
 
 	ngOnInit() {
 		this.windowResize(null);
+		console.log(this.scrollLink)
 	}
 
 	/**
@@ -33,11 +36,19 @@ export class HeroComponent implements OnInit {
 			this.displayImage = false;
 			this.heroHeight = `${this.window.innerHeight - this.headerSection.nativeElement.offsetHeight}px`;
 			this.imageStyle = { 'height': this.heroHeight}
-			console.log(this.imagePosition);
 			if(this.imagePosition) this.imageStyle.position = this.imagePosition;
 		} else {
 			this.imageStyle = {};
 			this.displayImage = true;
+		}
+	}
+
+	scroll() {
+		if(this.scrollLink) {
+			this.scrollService.scroll({
+				document: this.document,
+				scrollTarget: this.scrollLink.anchor
+			})
 		}
 	}
 

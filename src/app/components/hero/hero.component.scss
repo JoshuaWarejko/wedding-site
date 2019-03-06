@@ -64,3 +64,20 @@
 		}
 	}
 }
+
+.scroll-btn {
+	cursor: pointer;
+}
+
+.link {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+	transform: translateX(-50%);
+	display: none;
+	@media screen and (min-width: 768px) {
+		bottom: 50px;
+		font-size: 20px;
+		display: block;
+	}
+}

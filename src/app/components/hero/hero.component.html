@@ -31,6 +31,14 @@
 						</h2>
 						<h2 *ngIf="subtitle">{{subtitle}}</h2>
 					</div>
+					<div class="link text-center" *ngIf="scrollLink">
+						<div>
+							<a class="scroll-btn" (click)="scroll()">
+								<div>{{scrollLink.text}}</div>
+								<fa name="arrow-down"></fa>
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

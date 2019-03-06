@@ -34,7 +34,8 @@
                             "src/styles.scss"
                         ],
                         "scripts": [
-							"node_modules/wowjs/dist/wow.js"
+							"node_modules/wowjs/dist/wow.js",
+							"./src/assets/registry.js"
 						]
                     },
                     "configurations": {

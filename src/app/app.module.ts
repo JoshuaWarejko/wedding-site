@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Imports ( 3rd Party Modules )
 import { NgbModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
 
 // Pages
 import { HomeComponent } from './pages/home/home.component';
@@ -18,6 +19,9 @@ import { AccommodationsComponent } from './pages/accommodations/accommodations.c
 // Components
 import { HeaderComponent, FooterComponent, VideoComponent } from './components';
 import { HeroComponent } from './components/hero/hero.component';
+
+// Pipes
+import { SafePipe } from './pipes';
 
 import { AppComponent } from './app.component';
 
@@ -36,17 +40,20 @@ import { routes } from './routes';
         RegistryComponent,
         HeroComponent,
         AccommodationsComponent,
+        SafePipe,
     ],
     imports: [
 		BrowserModule,
 		HttpClientModule,
 		AngularFontAwesomeModule,
+		NgxPageScrollCoreModule,
         NgbModule.forRoot(),
         RouterModule.forRoot(routes,
             { enableTracing: false } // <-- debugging purposes only
         ),
     ],
     providers: [
+		{ provide: 'DOCUMENT', useFactory: getDocument },
 		{ provide: 'WINDOW', useFactory: getWindow },
 		NgbCarouselConfig
 	],
@@ -59,3 +66,8 @@ export class AppModule { }
 export function getWindow() {
     return (typeof window !== "undefined") ? window : null;;
 }
+
+export function getDocument() {
+	return (typeof document !== 'undefined') ? document : null;
+}
+
