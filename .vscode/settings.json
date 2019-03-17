@@ -16,5 +16,8 @@
     "editor.wrappingIndent": "indent",
     "tslint.autoFixOnSave": true,
     "eslint.autoFixOnSave": true,
-    "editor.insertSpaces": false,
+	"editor.insertSpaces": false,
+	"[json]": {
+		"editor.tabSize": 2
+	}
 }

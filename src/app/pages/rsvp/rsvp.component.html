@@ -1,0 +1,59 @@
+<div id="registry">
+	<app-hero imageSrc="../../../assets/images/registry-hero2.jpg" title="Registry" [scrollLink]="{text: 'See Registry', anchor: '#registry-content'}"></app-hero>
+</div>
+<section>
+	<div class="container">
+		<div class="content text-center">
+			<p>Enter your last name below to RSVP.</p>
+			<form (submit)="searchForHouseholds()">
+				<div class="form-row justify-content-center">
+					<div class="col-auto">
+						<div class="form-group">
+							<label class="sr-only">Last Name</label>
+							<input name="household" class="form-control" [(ngModel)]="householdSearch" placeholder="Last Name" />
+						</div>
+					</div>
+					<div class="col-auto">
+						<button class="btn btn-primary" type="submit">Search</button>
+					</div>
+				</div>
+			</form>
+			<div *ngFor="let household of households" [class.ghost]="state(household).isLoading" [class.announcement]="state(household).isLoaded">
+				<div class="d-flex justify-content-center" [class.polling]="state(household).isPolling">
+					<div class="name">{{household.data?.name}}</div>
+					<div class="head">{{household.data?.head}}</div>
+				</div>
+			</div>
+			<div *ngIf="chosenHousehold">
+				<form (submit)="submitRsvp()">
+					<h2 class="mb-4">{{chosenHousehold.name}} Household</h2>
+					<div class="guests mb-4">
+						<div class="guest mb-3" *ngFor="let guest of chosenHousehold.guests; let i = index;">
+							<h3>{{guest.firstName}}&nbsp;{{guest.lastName}}</h3>
+							<div class="accept-decline">
+								<label class="radio-inline mr-2"><input type="radio" name="accept{{i}}">Accept With Pleasure</label>
+								<label class="radio-inline"><input type="radio" name="accept{{i}}">Decline With Regret</label>
+							</div>
+							<h5>Dinner Choice</h5>
+							<div class="dinner-choices">
+								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Steak" [(ngModel)]="guest.foodChoice">Steak</label>
+								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Mahi-mahi" [(ngModel)]="guest.foodChoice">Mahi-mahi</label>
+								<label class="radio-inline"><input type="radio" name="dinner{{i}}" value="Vegetarian" [(ngModel)]="guest.foodChoice">Vegetarian</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" [(ngModel)]="chosenHousehold.stayingInRpv" id="stayingInRpv">
+						<label class="form-check-label" for="stayingInRpv">
+							Staying in Rancho Palos Verdes?
+						</label>
+					</div>
+					<div class="form-group" *ngIf="chosenHousehold.stayingInRpv">
+						<label>Let us know where!</label>
+						<input type="text" class="form-control" name="stayingLocation" [(ngModel)]="chosenHousehold.stayingLocation" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>

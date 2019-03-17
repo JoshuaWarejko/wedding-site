@@ -1,0 +1,13 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "database": {
+    "database": "wedding",
+    "name": "database",
+    "connector": "mongodb",
+    "allowExtendedOperators": true,
+    "useNewUrlParser": true
+  }
+}

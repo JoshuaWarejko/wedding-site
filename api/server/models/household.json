@@ -1,0 +1,34 @@
+{
+  "name": "Household",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+		},
+		"head": {
+			"type": "string",
+			"required": true
+		},
+		"stayingInRpv": {
+      "type": "boolean"
+		},
+		"stayingLocation": {
+			"type": "string"
+		}
+  },
+  "validations": [],
+  "relations": {
+    "guests": {
+      "type": "hasMany",
+      "model": "Guest",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

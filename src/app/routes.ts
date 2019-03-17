@@ -6,6 +6,7 @@ import { ProposalComponent } from './pages/proposal/proposal.component';
 import { WeddingDetailsComponent } from './pages/wedding-details/wedding-details.component';
 import { RegistryComponent } from './pages/registry/registry.component';
 import { AccommodationsComponent } from './pages/accommodations/accommodations.component';
+import { RsvpComponent } from './pages/rsvp/rsvp.component';
 
 export const routes: Routes = [
 	{
@@ -35,6 +36,12 @@ export const routes: Routes = [
 	{
         path: 'accommodations',
         component: AccommodationsComponent,
+        pathMatch: 'full',
+        data: {}
+	},
+	{
+        path: 'rsvp',
+        component: RsvpComponent,
         pathMatch: 'full',
         data: {}
 	},
