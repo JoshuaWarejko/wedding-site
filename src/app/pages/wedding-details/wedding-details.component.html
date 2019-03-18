@@ -1,23 +1,77 @@
 <div id="proposal">
-	<app-hero imageSrc="../../../assets/images/home-hero.jpg" title="Wedding Details"></app-hero>
+	<app-hero imageSrc="../../../assets/images/carousel9.jpg" title="Wedding Details" [scrollLink]="{text: 'View Details', anchor: '#details'}"></app-hero>
 </div>
 <section>
 	<div class="container">
-		<div class="content">
-			<h3 class="text-center mb-5">Schedule Breakdown</h3>
-			<h4>Hotel Check-In</h4>
-			<div class="mb-3"><strong>4 PM</strong></div>
-			<h4>Ceremony Start Time</h4>
-			<div class="mb-1"><strong>5:30 PM</strong></div>
-			<p>The ceremony is located down by the cliff at Catalina Point. Below is a map for reference.</p>
-			<h4>Cocktail Hour</h4>
-			<div class="mb-3"><strong>6:30 PM - 7:30 PM</strong></div>
-			<h4>Reception</h4>
-			<div class="mb-2"><strong>7:30 PM - 11:30 PM</strong></div>
-			<p>In the Catalina Room.</p>
-			<div class="image-wrap">
-				<img src="../../../assets//images/catalina-point.png" alt="Ceremony Location" />
-			</div>
+		<div class="content text-center" id="details">
+			<section class="mb-5">
+				<h2 class="text-center mb-3">Schedule of Events</h2>
+				<div class="d-flex align-items-center justify-content-center mb-2">
+					<h4 class="mb-0 mr-2">We Do</h4>
+					<div class="image-wrap icon-wrap">
+						<img src="../../../assets/images/wedding-details/engagement-ring.png" alt="We Do Icon" />
+					</div>
+				</div>
+				<div class="mb-1"><strong>5:30 PM</strong></div>
+				<p>The ceremony is located down by the cliff at Catalina Point. Below is a map for reference.</p>
+				<div class="d-flex align-items-center justify-content-center mb-2">
+					<h4 class="mb-0 mr-2">We Drink</h4>
+					<div class="image-wrap icon-wrap">
+						<img src="../../../assets/images/wedding-details/champagne-glasses.png" alt="We Drink Icon" />
+					</div>
+				</div>
+				<div class="mb-3"><strong>6:30 PM - 7:30 PM</strong></div>
+				<div class="d-flex align-items-center justify-content-center mb-2">
+					<h4 class="mb-0 mr-2">We Dine</h4>
+					<div class="image-wrap icon-wrap">
+						<img src="../../../assets/images/wedding-details/wedding-dinner.png" alt="We Dine Icon" />
+					</div>
+				</div>
+				<div class="mb-2"><strong>7:30 PM - 11:30 PM</strong></div>
+				<p>In the Catalina Room.</p>
+			</section>
+			<section class="mb-5">
+				<h2 class="text-center mb-3">Valet</h2>
+				<p>Complimentary valet will be available at Terranea Resort.</p>
+			</section>
+			<section class="mb-5">
+				<h2 class="text-center mb-3">Terranea Resort</h2>
+				<a target="_blank" href="https://www.google.com/maps/dir//100+Terranea+Way,+Rancho+Palos+Verdes,+CA+90275/@33.7197213,-118.2709832,10z/data=!4m8!4m7!1m0!1m5!1m1!1s0x80dd4eac0e79e78d:0x6195379ed44488ce!2m2!1d-118.3978256!2d33.7368594">
+					<address>100 Terranea Way, Rancho Palos Verdes, CA 90275</address>
+				</a>
+				<p>Upon arrival, please proceed through the lobby towards the glossy ocean and glistening blue sky where you will find a staircase leading to the ceremony location, Catalina Point.</p>
+			</section>
+			<section class="mb-5">
+				<p>* Due to Friday evening traffic, please allow ample time for your arrival.</p>
+				<div class="image-wrap mx-auto">
+					<img src="../../../assets//images/catalina-point.png" alt="Ceremony Location" />
+				</div>
+			</section>
+			<section>
+				<h2 class="text-center mb-3">Accommodations</h2>
+				<div class="rooms-wrap">
+					<div class="row">
+						<div class="col-md-4 mb-md-0" *ngFor="let room of rooms">
+							<div class="room">
+								<a class="d-block" target="_blank" href="https://gc.synxis.com/rez.aspx?Chain=15564&shell=RBE2&hotel=23793&start=availresults&room=&arrive=06%2F07%2F2019&depart=06%2F08%2F2019&adult=1&child=0&rooms=1&__utma=253024652.267641796.1547187438.1547187440.1547187440.1&__utmb=253024652.1.10.1547187440&__utmc=253024652&__utmx=-&__utmz=253024652.1547187440.1.1.utmcsr%3Dgoogle%7Cutmccn%3D%28organic%29%7Cutmcmd%3Dorganic%7Cutmctr%3D%28not%2520provided%29&__utmv=-&__utmk=24647289&_ga=2.225922714.12884530.1547187438-267641796.1547187438">
+									<div class="image-wrap">
+										<img [src]="room.image" [alt]="room.title" />
+									</div>
+								</a>
+								<div class="info pt-2">
+									<h3>{{room.title}}</h3>
+									<div class="mb-2"><strong>Size:</strong> {{room.size}}</div>
+									<ul>
+										<li *ngFor="let feature of room.features">{{feature}}</li>
+									</ul>
+									<p *ngIf="room.readMore">{{room.description}}</p>
+									<button class="btn btn-primary" (click)="room.readMore = !room.readMore">Read {{ !room.readMore ? 'More' : 'Less'}}</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 		</div>
 	</div>
 </section>

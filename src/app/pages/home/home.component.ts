@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
 
 	showNavigationArrows = true;
 	showNavigationIndicators = true;
-	images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(value => `../../../assets/images/carousel${value}.jpg`);
+	images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(value => `../../../assets/images/carousel${value}.jpg`);
 	imageIndex: number = 0;
 	popup = false;
 

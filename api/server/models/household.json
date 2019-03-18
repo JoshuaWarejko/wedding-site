@@ -29,6 +29,39 @@
       "foreignKey": ""
     }
   },
-  "acls": [],
-  "methods": {}
+  "acls": [
+		{
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+		},
+		{
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": [
+				"find",
+        "submitRsvp"
+      ]
+    }
+	],
+  "methods": {
+		"prototype.submitRsvp": {
+			"accepts": [
+				{
+					"arg": "householdData",
+					"type": "object",
+					"required": true
+				}
+			],
+			"returns": [],
+			"description": "Submits the RSVP by updating all data for household and household guests.",
+			"http": {
+				"path": "/rsvp",
+				"verb": "POST"
+			}
+		}
+	}
 }

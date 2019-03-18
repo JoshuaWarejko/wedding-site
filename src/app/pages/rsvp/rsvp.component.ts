@@ -24,6 +24,8 @@ export class RsvpComponent implements OnInit {
 	ngOnInit() { }
 
 	searchForHouseholds() {
+		this.households = [];
+		this.chosenHousehold = null;
 		this.rsvpService.searchHouseholds(this.householdSearch).subscribe(response => {
 			if(response.length !== 1) {
 				this.households = response;
@@ -36,7 +38,7 @@ export class RsvpComponent implements OnInit {
 	}
 
 	submitRsvp() {
-		console.log(this.chosenHousehold);
+
 	}
 
 }

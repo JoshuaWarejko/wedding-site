@@ -1,9 +1,9 @@
 <div id="registry">
-	<app-hero imageSrc="../../../assets/images/registry-hero2.jpg" title="Registry" [scrollLink]="{text: 'See Registry', anchor: '#registry-content'}"></app-hero>
+	<app-hero imageSrc="../../../assets/images/carousel7.jpg" title="RSVP" [scrollLink]="{text: 'RSVP', anchor: '#rsvp'}"></app-hero>
 </div>
 <section>
 	<div class="container">
-		<div class="content text-center">
+		<div class="content text-center" id="rsvp">
 			<p>Enter your last name below to RSVP.</p>
 			<form (submit)="searchForHouseholds()">
 				<div class="form-row justify-content-center">
@@ -19,7 +19,7 @@
 				</div>
 			</form>
 			<div *ngFor="let household of households" [class.ghost]="state(household).isLoading" [class.announcement]="state(household).isLoaded">
-				<div class="d-flex justify-content-center" [class.polling]="state(household).isPolling">
+				<div class="lines d-flex justify-content-center" [class.polling]="state(household).isPolling">
 					<div class="name">{{household.data?.name}}</div>
 					<div class="head">{{household.data?.head}}</div>
 				</div>
@@ -34,7 +34,7 @@
 								<label class="radio-inline mr-2"><input type="radio" name="accept{{i}}">Accept With Pleasure</label>
 								<label class="radio-inline"><input type="radio" name="accept{{i}}">Decline With Regret</label>
 							</div>
-							<h5>Dinner Choice</h5>
+							<h5>Dinner Selection</h5>
 							<div class="dinner-choices">
 								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Steak" [(ngModel)]="guest.foodChoice">Steak</label>
 								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Mahi-mahi" [(ngModel)]="guest.foodChoice">Mahi-mahi</label>
@@ -43,7 +43,7 @@
 						</div>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" [(ngModel)]="chosenHousehold.stayingInRpv" id="stayingInRpv">
+						<input class="form-check-input" name="stayingInRpv" type="checkbox" [(ngModel)]="chosenHousehold.stayingInRpv" id="stayingInRpv">
 						<label class="form-check-label" for="stayingInRpv">
 							Staying in Rancho Palos Verdes?
 						</label>

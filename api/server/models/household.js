@@ -1,5 +1,7 @@
 'use strict';
 
+const async = require('async');
+
 module.exports = function(Household) {
 
 	Household.observe('before save', (ctx, callback) => {
@@ -14,5 +16,21 @@ module.exports = function(Household) {
 			return callback();
 		})
 	});
+
+	Household.prototype.submitRsvp = function(householdData, callback) {
+		const self = this;
+		const dataError = new Error('Household data and guest data required to submit rsvp.');
+		dataError.status = 400;
+		if(!householdData || !householdData.guests || householdData.guests.length === 0) return callback(dataError);
+		return async.waterfall([
+			(callback) => {
+				self.updateAttributes({ stayingInRpv: householdData.stayingInRpv, stayingLocation: householdData.stayingLocation }, callback);
+			}, (updatedHousehold, callback) => {
+				async.each(householdData.guests, (guest, callback) => {
+					guest.updateAttributes({foodChoice: guest.foodChoice, accept: guest.accept}, callback);
+				}, callback);
+			}
+		], callback);
+	}
 
 };
