@@ -11,7 +11,9 @@
 		"exec_mode": "fork",
 		"autorestart": true,
 		"env_staging": {
-			"NODE_ENV": "staging"
+			"NODE_ENV": "staging",
+			"PORT": "8082",
+			"NODE_PORT": "8082"
 		}
 	}
 ]

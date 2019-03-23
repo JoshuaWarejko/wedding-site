@@ -17,6 +17,7 @@ export interface Household {
 	stayingInRpv?: boolean;
 	stayingLocation?: string;
 	guests?: Guest[];
+	expanded?: boolean;
 }
 
 export type AsyncHousehold = AsyncItem<Household>[];

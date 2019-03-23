@@ -38,6 +38,24 @@ export class RsvpService {
 		return this.http.post(`${environment.apiUrl}/api/Households/${householdData.id}/rsvp`, { householdData: householdData });
 	}
 
+	getHouseholds(): Observable<AsyncItem<Household>[]> {
+		this.householdsAnnouncer.next(this.buildGhosts(10));
+		const query = {
+			include: 'guests',
+			orderBy: 'name ASC'
+		}
+		this.http.get(`${environment.apiUrl}/api/Households?filter=${JSON.stringify(query)}`)
+		.pipe(delay(this.RESPONSE_DELAY), map(this.wrapAsAsyncItems))
+		.subscribe(response => {
+			this.householdsAnnouncer.next(response);
+		});
+		return this.households$;
+	}
+
+	getGuestCount(whereClause: any): Observable<any> {
+		return this.http.get(`${environment.apiUrl}/api/Guests/count?where=${JSON.stringify(whereClause)}`);
+	}
+
 	// ********************************************************
 	// ****************   Utils
 	// ********************************************************

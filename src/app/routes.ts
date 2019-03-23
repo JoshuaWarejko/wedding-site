@@ -7,6 +7,7 @@ import { WeddingDetailsComponent } from './pages/wedding-details/wedding-details
 import { RegistryComponent } from './pages/registry/registry.component';
 import { AccommodationsComponent } from './pages/accommodations/accommodations.component';
 import { RsvpComponent } from './pages/rsvp/rsvp.component';
+import { GuestsComponent } from './pages/guests/guests.component';
 
 export const routes: Routes = [
 	{
@@ -48,6 +49,12 @@ export const routes: Routes = [
     {
         path: 'landing',
         component: LandingComponent,
+        pathMatch: 'full',
+        data: {}
+	},
+	{
+        path: 'guests',
+        component: GuestsComponent,
         pathMatch: 'full',
         data: {}
 	}

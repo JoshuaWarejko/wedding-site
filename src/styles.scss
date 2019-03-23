@@ -89,6 +89,13 @@ $ghost-row-gap: 12px;
 			@include animate-ghost-line;
 		}
 
+		a.btn {
+			height: 30px;
+			@include animate-ghost-line;
+			display: block;
+			margin-bottom: 1.5rem;
+		}
+
 
 		button {
 			width: 100px;

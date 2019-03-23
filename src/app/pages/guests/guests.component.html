@@ -1,0 +1,39 @@
+<div id="accommodations">
+	<app-hero></app-hero>
+</div>
+<section>
+	<div class="container">
+		<div class="content">
+			<h2 class="text-center">Guests</h2>
+			<div class="d-flex align-items-center justify-content-center mb-4">
+				<div>Invited: {{guestsInvited}}</div>
+				<div class="px-4">Accepted: {{guestsAccepted}}</div>
+				<div>Declined: {{guestsDeclined}}</div>
+			</div>
+			<h2 class="text-center">Households</h2>
+			<div class="d-flex justify-content-center align-items-center mb-4">
+				<button (click)="expandAll()" class="btn btn-link">Expand All</button>
+				<button (click)="closeAll()" class="btn btn-link">Close All</button>
+			</div>
+			<div class="households">
+				<div class="row">
+					<div class="col-md-4" *ngFor="let household of households" [class.ghost]="state(household).isLoading" [class.announcement]="state(household).isLoaded">
+						<div class="lines">
+							<a (click)="household.data.expanded = !household.data.expanded" class="d-flex justify-content-between btn btn-primary">
+								<div>{{household.data ? (household.data?.name + ', ') : ''}}{{household.data?.head}}</div>
+								<div *ngIf="household.data"><fa name="{{household.data?.expanded ? 'chevron-up' : 'chevron-down'}}"></fa></div>
+							</a>
+							<div class="guests py-2" *ngIf="household.data?.expanded">
+								<div *ngFor="let guest of household.data?.guests" class="mb-2">
+									<h5>{{guest.firstName}}&nbsp;{{guest.lastName}}</h5>
+									<div>{{guest.accept !== undefined ? (guest.accept ? 'Accepted' : 'Declined') : 'N/A'}}</div>
+									<div *ngIf="guest.accept !== undefined && guest.accept">{{guest.foodChoice}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

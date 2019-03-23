@@ -1,4 +1,4 @@
-<div class="hero" (window:resize)="windowResize($event)" [ngStyle]="{'max-height': heroHeight}">
+<div class="hero" (window:resize)="windowResize($event)" [ngStyle]="{'max-height': heroHeight}" *ngIf="imageSrc">
 	<img [src]="imageSrc" alt="Hero Image" *ngIf="displayImage" />
 	<div class="image" [ngStyle]="imageStyle" [style.background-image]="'url(' + imageSrc + ')'">
 		<div class="hero-inner">

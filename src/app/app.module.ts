@@ -31,6 +31,7 @@ import { RsvpService } from './providers';
 import { AppComponent } from './app.component';
 
 import { routes } from './routes';
+import { GuestsComponent } from './pages/guests/guests.component';
 
 @NgModule({
     declarations: [
@@ -47,6 +48,7 @@ import { routes } from './routes';
         AccommodationsComponent,
         SafePipe,
         RsvpComponent,
+        GuestsComponent,
     ],
     imports: [
 		BrowserModule,
