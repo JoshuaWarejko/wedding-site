@@ -1,5 +1,5 @@
 export const environment = {
     production: true,
     hmr: false,
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://staging-wedding-api.joshuawarejko.host'
 };

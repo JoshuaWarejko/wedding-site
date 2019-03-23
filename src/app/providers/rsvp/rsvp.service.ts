@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { AsyncHousehold, Household } from 'src/app/interfaces';
-import { makeAsyncItem, AsyncItemState, AsyncItem } from 'src/app/async-item';
+import { AsyncHousehold, Household } from '../../interfaces';
+import { makeAsyncItem, AsyncItemState, AsyncItem } from '../../async-item';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { map, delay } from 'rxjs/operators';
@@ -14,7 +14,7 @@ export class RsvpService {
 	private householdsAnnouncer = new BehaviorSubject<AsyncHousehold>(this.buildGhosts(5));
 	households$ = this.householdsAnnouncer.asObservable();
 
-	public RESPONSE_DELAY = 2000;
+	public RESPONSE_DELAY = 1000;
 
 	constructor(private http: HttpClient) { }
 
@@ -32,6 +32,10 @@ export class RsvpService {
 			this.householdsAnnouncer.next(response);
 		});
 		return this.households$;
+	}
+
+	submitRsvp(householdData: Household): Observable<any> {
+		return this.http.post(`${environment.apiUrl}/api/Households/${householdData.id}/rsvp`, { householdData: householdData });
 	}
 
 	// ********************************************************

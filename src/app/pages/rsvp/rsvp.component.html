@@ -18,41 +18,79 @@
 					</div>
 				</div>
 			</form>
-			<div *ngFor="let household of households" [class.ghost]="state(household).isLoading" [class.announcement]="state(household).isLoaded">
-				<div class="lines d-flex justify-content-center" [class.polling]="state(household).isPolling">
-					<div class="name">{{household.data?.name}}</div>
-					<div class="head">{{household.data?.head}}</div>
+			<div class="alert alert-info" *ngIf="searched && (!households || households.length === 0) && !chosenHousehold">No guests found.</div>
+			<div class="households" *ngIf="!chosenHousehold">
+				<div *ngIf="searched && households && households.length > 0 && !chosenHousehold">
+					<h2>Households</h2>
+					<p>Choose which household you are a part of.</p>
+				</div>
+				<div *ngFor="let household of households" class="mb-2" [class.ghost]="state(household).isLoading" [class.announcement]="state(household).isLoaded">
+					<div class="lines" [class.polling]="state(household).isPolling">
+						<button class="btn btn-primary" (click)="selectHousehold(household)">
+							<span class="name">{{household.data?.name}}</span><span *ngIf="household.data">, </span><span class="head">{{household.data?.head}}</span>
+						</button>
+					</div>
 				</div>
 			</div>
-			<div *ngIf="chosenHousehold">
-				<form (submit)="submitRsvp()">
+			<div *ngIf="chosenHousehold" class="chosen-household" [hidden]="success">
+				<form (submit)="submitRsvp()" #rsvpForm="ngForm">
 					<h2 class="mb-4">{{chosenHousehold.name}} Household</h2>
 					<div class="guests mb-4">
-						<div class="guest mb-3" *ngFor="let guest of chosenHousehold.guests; let i = index;">
-							<h3>{{guest.firstName}}&nbsp;{{guest.lastName}}</h3>
-							<div class="accept-decline">
-								<label class="radio-inline mr-2"><input type="radio" name="accept{{i}}">Accept With Pleasure</label>
-								<label class="radio-inline"><input type="radio" name="accept{{i}}">Decline With Regret</label>
+						<div class="guest mb-4" *ngFor="let guest of chosenHousehold.guests; let i = index;">
+							<h3 class="mb-2">{{guest.firstName}}&nbsp;{{guest.lastName}}</h3>
+							<div class="accept-decline mb-2">
+								<label class="radio radio-inline custom mr-3">
+									<input type="radio" name="accept{{i}}" [value]="true" [(ngModel)]="guest.accept" #acceptDecline="ngModel" required>
+									<span class="custom-check-text">Accept With Pleasure</span>
+									<span class="custom-check"></span>
+								</label>
+								<label class="radio radio-inline custom">
+									<input type="radio" name="accept{{i}}" [value]="false" [(ngModel)]="guest.accept">
+									<span class="custom-check-text">Decline With Regret</span>
+									<span class="custom-check"></span>
+								</label>
 							</div>
+							<div class="alert alert-danger" *ngIf="rsvpForm.submitted && acceptDecline.hasError('required')">Please accept or decline the invite.</div>
 							<h5>Dinner Selection</h5>
 							<div class="dinner-choices">
-								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Steak" [(ngModel)]="guest.foodChoice">Steak</label>
-								<label class="radio-inline mr-2"><input type="radio" name="dinner{{i}}" value="Mahi-mahi" [(ngModel)]="guest.foodChoice">Mahi-mahi</label>
-								<label class="radio-inline"><input type="radio" name="dinner{{i}}" value="Vegetarian" [(ngModel)]="guest.foodChoice">Vegetarian</label>
+								<label class="radio radio-inline custom mr-3">
+									<input type="radio" name="dinner{{i}}" value="Tomahawk Pork Chop" [(ngModel)]="guest.foodChoice" [required]="guest.accept">
+									<span class="custom-check-text">Tomahawk Pork Chop</span>
+									<span class="custom-check"></span>
+								</label>
+								<label class="radio radio-inline custom mr-3">
+									<input type="radio" name="dinner{{i}}" value="Mahi-mahi" [(ngModel)]="guest.foodChoice">
+									<span class="custom-check-text">Mahi-mahi</span>
+									<span class="custom-check"></span>
+								</label>
+								<label class="radio radio-inline custom">
+									<input type="radio" name="dinner{{i}}" value="Vegetarian" [(ngModel)]="guest.foodChoice">
+									<span class="custom-check-text">Vegetarian</span>
+									<span class="custom-check"></span>
+								</label>
 							</div>
+							<div class="alert alert-danger" *ngIf="rsvpForm.submitted && !guest.foodChoice">Please select a food choice.</div>
 						</div>
 					</div>
 					<div class="form-check">
-						<input class="form-check-input" name="stayingInRpv" type="checkbox" [(ngModel)]="chosenHousehold.stayingInRpv" id="stayingInRpv">
-						<label class="form-check-label" for="stayingInRpv">
-							Staying in Rancho Palos Verdes?
+						<label class="radio custom form-check-label" for="stayingInRpv">
+							<input class="form-check-input" name="stayingInRpv" type="checkbox" [(ngModel)]="chosenHousehold.stayingInRpv" id="stayingInRpv">
+							<span class="custom-check-text">Staying in Rancho Palos Verdes?</span>
+							<span class="custom-check"></span>
 						</label>
 					</div>
 					<div class="form-group" *ngIf="chosenHousehold.stayingInRpv">
 						<label>Let us know where!</label>
 						<input type="text" class="form-control" name="stayingLocation" [(ngModel)]="chosenHousehold.stayingLocation" />
 					</div>
+					<div class="form-footer mt-4">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
 				</form>
+			</div>
+			<div class="success" *ngIf="success">
+				<p>Thank you for your response!</p>
+				<p *ngIf="successMessage">{{successMessage}}</p>
 			</div>
 		</div>
 	</div>

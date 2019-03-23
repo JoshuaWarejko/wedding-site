@@ -1,0 +1,17 @@
+[
+	{
+		"name": "wedding-api",
+		"cwd": ".",
+		"script": "server/server.js",
+		"log_date_format": "YYYY-MM-DD HH:mm Z",
+		"min_uptime": 5000,
+		"max_restarts": 10,
+		"max_memory_restart": "500M",
+		"exec_interpreter": "node",
+		"exec_mode": "fork",
+		"autorestart": true,
+		"env_staging": {
+			"NODE_ENV": "staging"
+		}
+	}
+]

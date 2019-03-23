@@ -27,7 +27,10 @@ module.exports = function(Household) {
 				self.updateAttributes({ stayingInRpv: householdData.stayingInRpv, stayingLocation: householdData.stayingLocation }, callback);
 			}, (updatedHousehold, callback) => {
 				async.each(householdData.guests, (guest, callback) => {
-					guest.updateAttributes({foodChoice: guest.foodChoice, accept: guest.accept}, callback);
+					Household.app.models.Guest.findById(guest.id, (error, guestInstance) => {
+						if(error) return callback(error);
+						guestInstance.updateAttributes({foodChoice: guest.foodChoice, accept: guest.accept}, callback);
+					})
 				}, callback);
 			}
 		], callback);
