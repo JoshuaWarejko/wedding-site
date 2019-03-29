@@ -14,7 +14,7 @@ export class RsvpService {
 	private householdsAnnouncer = new BehaviorSubject<AsyncHousehold>(this.buildGhosts(5));
 	households$ = this.householdsAnnouncer.asObservable();
 
-	public RESPONSE_DELAY = 1000;
+	public RESPONSE_DELAY = 0;
 
 	constructor(private http: HttpClient) { }
 
@@ -22,7 +22,7 @@ export class RsvpService {
 		this.householdsAnnouncer.next(this.buildGhosts(2));
 		const query = {
 			where: {
-				name: name
+				name: { like: name, options: 'i' }
 			},
 			include: 'guests'
 		}

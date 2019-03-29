@@ -546,11 +546,9 @@ module.exports = function(server, callback) {
 					return Household.create({name: householdData.name, head: householdData.head}, callback);
 				})
 			}, (household, callback) => {
-				console.log('Household: ', household);
 				async.eachLimit(householdData.guests, 5, (guest, callback) => {
 					// Check if guest already exists for household, else create new guest.
 					household.guests.findOne({ where: { firstName: guest.firstName, lastName: guest.lastName } }, (error, foundGuest) => {
-						console.log(guest, foundGuest);
 						if(error) return callback(error);
 						if(foundGuest) return callback(null, foundGuest);
 						return household.guests.create(guest, (error, newGuest) => {
