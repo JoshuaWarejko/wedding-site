@@ -482,8 +482,8 @@ module.exports = function(server, callback) {
 			]
 		},
 		{
-			name: 'Stephen',
-			head: 'Verstegen',
+			name: 'Verstegen',
+			head: 'Stephen',
 			guests: [
 				{ firstName: 'Stephen', lastName: 'Verstegen' }
 			]
