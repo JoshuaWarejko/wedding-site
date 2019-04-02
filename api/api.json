@@ -13,7 +13,14 @@
 		"env_staging": {
 			"NODE_ENV": "staging",
 			"PORT": "8082",
-			"NODE_PORT": "8082"
+			"NODE_PORT": "8082",
+			"name": "staging-wedding-api"
+		},
+		"env_production": {
+			"NODE_ENV": "production",
+			"PORT": "8083",
+			"NODE_PORT": "8083",
+			"name": "production-wedding-api"
 		}
 	}
 ]
