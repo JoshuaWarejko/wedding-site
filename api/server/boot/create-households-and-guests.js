@@ -383,14 +383,14 @@ module.exports = function(server, callback) {
 				{ firstName: 'Lynita', lastName: 'Snow' }
 			]
 		},
-		// {
-		// 	name: 'Moreno',
-		// 	head: '',
-		// 	guests: [
-		// 		{ firstName: '', lastName: 'Moreno' },
-		// 		{ firstName: 'Amy', lastName: 'Moreno' }
-		// 	]
-		// },
+		{
+			name: 'Moreno',
+			head: 'Joel',
+			guests: [
+				{ firstName: 'Joel', lastName: 'Moreno' },
+				{ firstName: 'Amy', lastName: 'Moreno' }
+			]
+		},
 		{
 			name: 'Cantrell',
 			head: 'Thomas',

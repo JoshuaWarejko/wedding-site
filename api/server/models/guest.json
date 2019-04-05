@@ -22,7 +22,12 @@
 		}
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+		"household": {
+			"type": "belongsTo",
+      "model": "Household"
+		}
+	},
   "acls": [
 		{
       "accessType": "*",
@@ -36,7 +41,8 @@
       "principalId": "$everyone",
 			"permission": "ALLOW",
 			"property": [
-				"count"
+				"count",
+				"find"
 			]
 		}
 	],

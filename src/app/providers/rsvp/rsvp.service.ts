@@ -13,6 +13,8 @@ export class RsvpService {
 
 	private householdsAnnouncer = new BehaviorSubject<AsyncHousehold>(this.buildGhosts(5));
 	households$ = this.householdsAnnouncer.asObservable();
+	private guestsAnnouncer = new BehaviorSubject<AsyncHousehold>(this.buildGhosts(5));
+	guests$ = this.guestsAnnouncer.asObservable();
 
 	public RESPONSE_DELAY = 0;
 
@@ -54,6 +56,20 @@ export class RsvpService {
 
 	getGuestCount(whereClause: any): Observable<any> {
 		return this.http.get(`${environment.apiUrl}/api/Guests/count?where=${JSON.stringify(whereClause)}`);
+	}
+
+	getGuests(): Observable<any> {
+		const query = {
+			order: 'lastName ASC',
+			include: 'household'
+		}
+		this.guestsAnnouncer.next(this.buildGhosts(10));
+		this.http.get(`${environment.apiUrl}/api/Guests?filter=${JSON.stringify(query)}`)
+		.pipe(delay(this.RESPONSE_DELAY), map(this.wrapAsAsyncItems))
+		.subscribe(response => {
+			this.guestsAnnouncer.next(response);
+		});
+		return this.guests$;
 	}
 
 	// ********************************************************

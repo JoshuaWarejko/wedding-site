@@ -28,6 +28,7 @@ export interface Guest {
 	lastName: string;
 	foodChoice?: string;
 	accept?: boolean;
+	household?: Household;
 }
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RsvpService } from '../../providers';
 import { AsyncItem, queryState } from '../../async-item';
-import { Household } from '../../interfaces';
+import { Household, Guest } from '../../interfaces';
 
 @Component({
 	selector: 'app-guests',
@@ -13,7 +13,9 @@ export class GuestsComponent implements OnInit {
 	guestsInvited: number;
 	guestsAccepted: number;
 	guestsDeclined: number;
-	households: AsyncItem<Household>[] = [];
+	guests: AsyncItem<Guest>[] = [];
+
+	displayChoice: string = 'all';
 
 	state = queryState;
 
@@ -35,23 +37,10 @@ export class GuestsComponent implements OnInit {
 		}, error => {
 			console.error(error);
 		});
-		this.rsvpService.getHouseholds().subscribe(response => {
-			console.log(response);
-			this.households = response;
+		this.rsvpService.getGuests().subscribe(response => {
+			this.guests = response;
 		}, error => {
 			console.error(error);
-		});
-	}
-
-	expandAll() {
-		this.households.forEach(household => {
-			household.data.expanded = true;
-		});
-	}
-
-	closeAll() {
-		this.households.forEach(household => {
-			household.data.expanded = false;
 		});
 	}
 
