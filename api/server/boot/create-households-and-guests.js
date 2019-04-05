@@ -92,24 +92,30 @@ module.exports = function(server, callback) {
 				{ firstName: 'Coco', lastName: 'Horsager' }
 			]
 		},
-		// {
-		// 	name: 'Marquez',
-		// 	head: '',
-		// 	guests: [
-		// 		{ firstName: '', lastName: 'Marquez' },
-		// 		{ firstName: 'Teresa', lastName: 'Marquez' },
-		// 		{ firstName: 'Anneliese', lastName: 'Marquez' }
-		// 	]
-		// },
-		// {
-		// 	name: 'Ganish',
-		// 	head: 'Gilad',
-		// 	guests: [
-		// 		{ firstName: 'Gilad', lastName: 'Ganish' },
-		// 		{ firstName: 'Holly', lastName: 'Wilson' },
-		// 		{ firstName: 'Maddi', lastName: 'Wilson' }
-		// 	]
-		// },
+		{
+			name: 'Marquez',
+			head: 'Jeff',
+			guests: [
+				{ firstName: 'Jeff', lastName: 'Marquez' },
+				{ firstName: 'Teresa', lastName: 'Marquez' },
+				{ firstName: 'Anneliese', lastName: 'Marquez' }
+			]
+		},
+		{
+			name: 'Wilson',
+			head: 'Holly',
+			guests: [
+				{ firstName: 'Holly', lastName: 'Wilson' },
+				{ firstName: 'Maddi', lastName: 'Wilson' }
+			]
+		},
+		{
+			name: 'Ganish',
+			head: 'Gilad',
+			guests: [
+				{ firstName: 'Gilad', lastName: 'Ganish' },
+			]
+		},
 		{
 			name: 'Banks',
 			head: 'Sean',
@@ -174,15 +180,15 @@ module.exports = function(server, callback) {
 				{ firstName: 'Elizabeth', lastName: 'Elizabeth' }
 			]
 		},
-		// {
-		// 	name: 'Ricci',
-		// 	head: 'Diane',
-		// 	guests: [
-		// 		{ firstName: 'Diane', lastName: 'Ricci' },
-		// 		{ firstName: 'Jeanette', lastName: 'Ricci' },
-		// 		{ firstName: 'Lizzy', lastName: 'Ricci' }
-		// 	]
-		// },
+		{
+			name: 'Ricci',
+			head: 'Diane',
+			guests: [
+				{ firstName: 'Diane', lastName: 'Ricci' },
+				{ firstName: 'Jeanette', lastName: 'Ricci' },
+				{ firstName: 'Lizzy', lastName: 'Ricci' }
+			]
+		},
 		{
 			name: 'Shaw',
 			head: 'Elliott',
@@ -256,15 +262,15 @@ module.exports = function(server, callback) {
 				{ firstName: 'Nicole', lastName: 'Hardaway' }
 			]
 		},
-		// {
-		// 	name: 'Georgino',
-		// 	head: '',
-		// 	guests: [
-		// 		{ firstName: '', lastName: 'Georgino' },
-		// 		{ firstName: 'Perla', lastName: 'Georgino' },
-		// 		{ firstName: 'Derek', lastName: 'Georgino' }
-		// 	]
-		// },
+		{
+			name: 'Georgino',
+			head: 'Tom',
+			guests: [
+				{ firstName: 'Tom', lastName: 'Georgino' },
+				{ firstName: 'Perla', lastName: 'Georgino' },
+				{ firstName: 'Derek', lastName: 'Georgino' }
+			]
+		},
 		{
 			name: 'Zemke',
 			head: 'Chris',
