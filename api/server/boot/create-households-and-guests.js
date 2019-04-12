@@ -177,7 +177,7 @@ module.exports = function(server, callback) {
 			name: 'Hamada',
 			head: 'Elizabeth',
 			guests: [
-				{ firstName: 'Elizabeth', lastName: 'Elizabeth' }
+				{ firstName: 'Elizabeth', lastName: 'Hamada' }
 			]
 		},
 		{
@@ -539,7 +539,21 @@ module.exports = function(server, callback) {
 				{ firstName: 'Jacob', lastName: 'Furnari' },
 				{ firstName: 'Cassie', lastName: 'Furnari' }
 			]
-		}
+		},
+		{
+			name: 'Cortez',
+			head: 'Chris',
+			guests: [
+				{ firstName: 'Chris', lastName: 'Cortez' }
+			]
+		},
+		{
+			name: 'Salazar',
+			head: 'Santiago',
+			guests: [
+				{ firstName: 'Santiago', lastName: 'Salazar' }
+			]
+		},
 	];
 
 	async.each(households, (householdData, callback) => {

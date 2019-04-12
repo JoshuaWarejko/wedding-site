@@ -61,9 +61,11 @@
 								<div class="info pt-2">
 									<h3>{{room.title}}</h3>
 									<div class="mb-2"><strong>Size:</strong> {{room.size}}</div>
-									<ul>
-										<li *ngFor="let feature of room.features">{{feature}}</li>
-									</ul>
+									<div>
+										<ul class="text-left d-inline-block">
+											<li *ngFor="let feature of room.features">{{feature}}</li>
+										</ul>
+									</div>
 									<p *ngIf="room.readMore">{{room.description}}</p>
 									<button class="btn btn-primary" (click)="room.readMore = !room.readMore">Read {{ !room.readMore ? 'More' : 'Less'}}</button>
 								</div>
