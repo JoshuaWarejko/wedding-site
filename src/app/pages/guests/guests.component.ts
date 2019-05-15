@@ -11,8 +11,9 @@ import { Household, Guest } from '../../interfaces';
 export class GuestsComponent implements OnInit {
 
 	guestsInvited: number;
-	guestsAccepted: number;
-	guestsDeclined: number;
+	guestsAccepted = 0;
+	guestsDeclined = 0;
+	guestsNotResponded = 0;
 	guests: AsyncItem<Guest>[] = [];
 
 	displayChoice: string = 'all';
@@ -22,23 +23,17 @@ export class GuestsComponent implements OnInit {
 	constructor(private rsvpService: RsvpService) { }
 
 	ngOnInit() {
-		this.rsvpService.getGuestCount({}).subscribe(response => {
-			this.guestsInvited = response.count;
-		}, error => {
-			console.error(error);
-		});
-		this.rsvpService.getGuestCount({accept: true}).subscribe(response => {
-			this.guestsAccepted = response.count;
-		}, error => {
-			console.error(error);
-		});
-		this.rsvpService.getGuestCount({accept: false}).subscribe(response => {
-			this.guestsDeclined = response.count;
-		}, error => {
-			console.error(error);
-		});
-		this.rsvpService.getGuests().subscribe(response => {
+		this.rsvpService.getGuests().subscribe((response: AsyncItem<Guest>[]) => {
 			this.guests = response;
+			this.guestsInvited = response.length;
+			console.log(response);
+			if(response.length && response[0].data) {
+				response.forEach(item => {
+					if(item.data.accept) this.guestsAccepted++;
+					else if(!item.data.accept && ('accept' in item.data)) this.guestsDeclined++;
+					else this.guestsNotResponded++;
+				});
+			}
 		}, error => {
 			console.error(error);
 		});
