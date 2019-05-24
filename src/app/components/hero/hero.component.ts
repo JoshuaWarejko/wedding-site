@@ -14,6 +14,7 @@ export class HeroComponent implements OnInit {
 	@Input() showGettingMarried: string;
 	@Input() imagePosition: string;
 	@Input() scrollLink: { text: string, anchor: string };
+	@Input() weAreMarried: boolean;
 	@ViewChild('headerSection') headerSection: ElementRef;
 	windowHeight: any;
 	displayImage: any;

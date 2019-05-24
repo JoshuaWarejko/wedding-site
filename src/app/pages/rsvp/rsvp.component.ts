@@ -25,9 +25,13 @@ export class RsvpComponent implements OnInit {
 
 	successMessage: any;
 
+	displayRsvp: boolean;
+
 	constructor(private rsvpService: RsvpService) { }
 
-	ngOnInit() { }
+	ngOnInit() {
+		this.displayRsvp = false;
+	}
 
 	searchForHouseholds() {
 		this.searched = false;

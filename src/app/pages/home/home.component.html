@@ -1,11 +1,12 @@
 <div id="home">
 	<div class="main-content">
-		<app-hero imageSrc="../../../assets/images/home-hero.jpg" title="Haley &amp; Josh" [showGettingMarried]="true"></app-hero>
+		<app-hero imageSrc="../../../assets/images/home-hero.jpg" title="Haley &amp; Josh" [showGettingMarried]="true" [weAreMarried]="weAreMarried"></app-hero>
 		<section class="begins-in">
 			<div class="container">
 				<div class="content text-center">
-					<h2>Ceremony Begins In</h2>
-					<div>
+					<h2 *ngIf="!weAreMarried">Ceremony Begins In</h2>
+					<h2 *ngIf="weAreMarried" class="we-are-married"><fa name="heart"></fa>&nbsp;We're Married!&nbsp;<fa name="heart"></fa></h2>
+					<div *ngIf="!weAreMarried">
 						<span class="mr-2">{{days}} Days</span>
 						<span class="mr-2">{{hours}} Hours</span>
 						<span class="mr-2">{{minutes}} Minutes</span>

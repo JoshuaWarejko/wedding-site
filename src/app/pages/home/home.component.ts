@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
 	minutes: number;
 	seconds: number;
 
+	weAreMarried: boolean;
+
 	constructor(config: NgbCarouselConfig, private http: HttpClient) {
 		moment.tz.setDefault(moment.tz.guess());
 		// customize default values of carousels used by this component tree
@@ -33,7 +35,8 @@ export class HomeComponent implements OnInit {
 	}
 
 	ngOnInit() {
-		const countdownDate = new Date(2019, 5, 7, 17, 0, 0).getTime(); // June 7, 2019 at 5pm
+		const countdownDate = new Date(2019, 5, 7, 18, 30, 0).getTime(); // June 7, 2019 at 6:30pm
+		this.weAreMarried = false;
 		// Update the count down every 1 second
 		// https://www.w3schools.com/howto/howto_js_countdown.asp
 		const countdownInterval = setInterval(() => {
@@ -49,6 +52,7 @@ export class HomeComponent implements OnInit {
 			if (distance < 0) {
 				clearInterval(countdownInterval);
 				// TODO: Display text that we are now married.
+				this.weAreMarried = true;
 			}
 		}, 1000);
 	}

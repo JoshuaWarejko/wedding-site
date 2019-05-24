@@ -1,0 +1,19 @@
+@keyframes pulse {
+	0% {
+		font-size: 30px;
+		transform: rotate(-1deg);
+	}
+	50% {
+		transform: rotate(1deg);
+	}
+	100% {
+		font-size: 40px;
+		transform: rotate(-1deg);
+	}
+}
+
+.we-are-married {
+	animation: pulse 700ms infinite;
+	animation-iteration-count: infinite;
+	animation-direction: alternate,
+}
